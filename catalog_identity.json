@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Ape Escape",
+    "id": "SCUS-94423",
+    "boot_exe": "SCUS_944.23"
+  },
+  "marketing": {
+    "description": "A native recompilation setup host for Ape Escape.",
+    "publisher": "",
+    "year": "",
+    "region": "USA",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "disc1.cue",
+    "bin_name": "disc1.bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 432238800,
+      "md5": "de4e7ab78c08bd03712e83c14d4cf642",
+      "sha1": "466cce4bcd6992f57227abd270323bcdad2fb7fc",
+      "crc32": "c6f455bc"
+    },
+    "disc_fp": "335c08ad6c150e63319cb0796ffa7d49a227772d6f8932acddad1adeb3a18e37"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x800A3660",
+    "text_size": "0x000A5000",
+    "stack_base": "0x00000000"
+  },
+  "seeds": {
+    "count": 1426,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK — Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

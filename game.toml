@@ -1,0 +1,53 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Ape Escape"
+id = "SCUS-94423"
+players = 1
+exe = "disc/SCUS_944.23"
+disc = ""
+load_address = "0x80010000"
+entry_pc = "0x800A3660"
+text_size = "0x000A5000"
+stack_base = "0x00000000"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "disc1.bin"
+cue_name = "disc1.cue"
+boot_exe = "SCUS_944.23"
+known_sizes = [432238800]
+known_md5 = [
+  "de4e7ab78c08bd03712e83c14d4cf642",
+]
+known_sha1 = [
+  "466cce4bcd6992f57227abd270323bcdad2fb7fc",
+]
+known_crc32 = [
+  "c6f455bc",
+]
+
+[recompiler]
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+window_title = "ape-escape- Recompiled"
+memcard_dir = "saves"
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "335c08ad6c150e63319cb0796ffa7d49a227772d6f8932acddad1adeb3a18e37"
